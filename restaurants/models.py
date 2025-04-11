@@ -1,4 +1,5 @@
 from django.db import models
+from mapbox_location_field.models import LocationField
 
 # Create your models here.
 

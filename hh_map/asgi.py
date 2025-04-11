@@ -14,3 +14,4 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hh_map.settings")
 
 application = get_asgi_application()
+/Users/rachaelkondrat/hh_map/hh_map/asgi.py
