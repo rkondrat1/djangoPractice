@@ -10,6 +10,7 @@ class Establishment(models.Model):
     zipcode = models.CharField(max_length=5)
     establishmentHours = models.CharField(max_length=12)
     website = models.URLField()
+    location = LocationField(default=[0.0, 0.0])
   
 
 # Data about the specific deal from the restaurant
@@ -20,8 +21,10 @@ class Deals(models.Model):
     dealDayofWeek = models.CharField(max_length=10)
     dealType = models.CharField(max_length=20)
     dealDetails = models.CharField(max_length=300)
+    #Deal relation to restaurant
+    establishment = models.ForeignKey(Establishment, on_delete=models.CASCADE, related_name='Deals', default=1)
 
-# Data about the specific deal from the restaurant
+# Data about the user
 class UserData(models.Model):
     ## HH Details
     firstName = models.CharField(max_length=30)
@@ -33,5 +36,5 @@ class UserData(models.Model):
     listofFavorites = models.CharField(max_length=300)
 
 
-    def __str__(self):
-        return self.title
+def __str__(self): 
+    return self.userName 

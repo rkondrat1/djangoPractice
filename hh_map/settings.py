@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'restaurants',
     'mapbox_location_field',
-    'map'
 ]
 
 MIDDLEWARE = [
