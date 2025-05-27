@@ -1,0 +1,127 @@
+<!-- index.html -->
+{% extends "restaurants/layout.html" %}
+{% load static %}
+
+{% block title %}LALAL{% endblock %}
+
+{% block content %}
+
+<div id="map"></div>
+
+
+<div class="title-bar">
+  <h2>NYC Happy Hour Finder</h2>
+</div>
+
+<div class="login-container" id="open">
+  <a href="login" class="login-icon" id="loginTrigger">
+    <i class='bx bxs-user'></i>
+  </a>
+</div>
+
+<!-- pre post map base-->
+
+<div class="filter-bar">
+  <!-- Neighborhood -->
+  <div class="select-box">
+    <div class="selected">Neighborhood</div>
+    <div class="options-container">
+      <div class="option">Lower East Side</div>
+      <div class="option">Midtown</div>
+      <div class="option">East Village</div>
+      <div class="option">Hells Kitchen</div>
+      <div class="option">Fidi</div>
+      <div class="option">West Village</div>
+      <div class="option">Bed-Stuy</div>
+      <div class="option">Crowne Heights</div>
+      <div class="option">Clinton Hill</div>
+      <div class="option">Clinton Hill</div>
+      <div class="option">Park Slope</div>
+      <div class="option">Williamsburg</div>
+    </div>
+  </div>
+
+  <!-- Start Time -->
+  <div class="select-box">
+    <div class="selected">Start Time</div>
+    <div class="options-container">
+      <div class="option">11 AM</div>
+      <div class="option">12 PM</div>
+      <div class="option">3 PM</div>
+      <div class="option">4 PM</div>
+      <div class="option">5 PM</div>
+      <div class="option">All Day</div>
+    </div>
+  </div>
+
+  <!-- Deal End Time -->
+  <div class="select-box">
+    <div class="selected">Deal End Time</div>
+    <div class="options-container">
+      <div class="option">5 PM</div>
+      <div class="option">5:30 PM</div>
+      <div class="option">6 PM</div>
+      <div class="option">6:30 PM</div>
+      <div class="option">7 PM</div>
+      <div class="option">7:30 PM</div>
+      <div class="option">8:00 PM</div>
+      <div class="option">All Day</div>
+    </div>
+  </div>
+
+  <!-- Day of Week -->
+  <div class="select-box">
+    <div class="selected">Day of Week</div>
+    <div class="options-container">
+      <div class="option">Monday</div>
+      <div class="option">Tuesday</div>
+      <div class="option">Wednesday</div>
+      <div class="option">Thursday</div>
+      <div class="option">Friday</div>
+    </div>
+  </div>
+
+  <!-- Deal Type -->
+  <div class="select-box">
+    <div class="selected">Deal Type</div>
+    <div class="options-container">
+      <div class="option">Drinks</div>
+      <div class="option">Food</div>
+    </div>
+  </div>
+</div>
+
+<!-- modal Structure -->
+<div id="loginModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <div class="wrapper">
+      <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" name="username" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox"> Remember Me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="register-link">
+          <p>Don't have an account? <a href="#">Register here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'restaurants/js/map.js' %}"></script>
+{% endblock %}
