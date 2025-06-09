@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'restaurants',
+    'users',
     'mapbox_location_field',
 ]
 

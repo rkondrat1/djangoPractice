@@ -10,21 +10,11 @@ class EstablishmentForm(forms.Form):
 
 class DealsForm (forms.Form):
     ## HH Details
-    dealStartTime = forms.TimeField()
-    dealEndTime = forms.TimeField()
-    dealDayofWeek = forms.CharField()
-    dealType = forms.CharField()
-    dealDetails = forms.CharField()
-
-class UserDataForm(forms.Form):
-    #UserData
-    firstName = forms.CharField()
-    lastName = forms.EmailField()
-    userName = forms.CharField()
-    password = forms.CharField()
-    profilePicture = forms.ImageField(required=False)
-    userLocation = forms.CharField(required=False)
-    listofFavorites = forms.CharField(required=False)
+    dealStartTime = forms.ChoiceField()
+    dealEndTime = forms.ChoiceField()
+    dealDayofWeek = forms.ChoiceField()
+    dealType = forms.ChoiceField()
+    dealDetails = forms.ChoiceField()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

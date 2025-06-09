@@ -8,14 +8,22 @@ body {
 
 }
 
-/* index.css code */
-    
+/* ========================================
+   restaurants/index.html
+   - map
+   - title bar
+   - login icon
+   - filter drop down menu
+======================================== */
+  
+/* map */
   #map {
     width: 99%;
     height: 100vh; /* Full screen */
 
   }
 
+/* title bar */
   .title-bar {
     position: absolute;
     top: 40px;
@@ -36,6 +44,7 @@ body {
     margin: 0;
   }
 
+/* login icon */
 .login-container {
   position: absolute;
   top: 40px;
@@ -51,14 +60,12 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      /* Flexbox centering from chat gbt to make the icon center*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
   }
   
 .login-icon:hover {
@@ -71,7 +78,7 @@ body {
     color: #333;
   }
 
-/* for the drop down select box*/
+/* filter drop down menu*/
 .container {
     position: absolute;
     top: 80px;
@@ -154,7 +161,13 @@ body {
     background-color: #f3f3f3;
   }
 
-  /* modal container */
+/* ========================================
+   templates/components/modal.html
+   - map
+   - title bar
+   - login icon
+   - filter drop down menu
+======================================== */
   .modal-overlay {
     display: none;
     position: fixed;
