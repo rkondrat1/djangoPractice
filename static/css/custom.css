@@ -163,10 +163,7 @@ body {
 
 /* ========================================
    templates/components/modal.html
-   - map
-   - title bar
-   - login icon
-   - filter drop down menu
+   - basic model stucture
 ======================================== */
   .modal-overlay {
     display: none;
@@ -187,7 +184,9 @@ body {
     border: 1px solid #888;
     border-radius: 10px;
     width: 90%;
-    max-width: 400px;
+    height: 90%;
+    max-height: 600px;
+    max-width: 600px;
     position: relative;
     font-family: sans-serif;
   }
@@ -205,4 +204,5 @@ body {
   .close-modal:hover {
     color: black;
   }
+  
   

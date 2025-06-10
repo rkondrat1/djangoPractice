@@ -14,8 +14,8 @@
 </div>
 
 <!-- login icon - onlick open up modal-->
-<div class="login-container" id="open">
-  <a href="#" class="login-icon" data-toggle="modal" data-target="#exampleModal" title="Open Modal" id="loginTrigger">
+<div class="login-container">
+  <a class="login-icon" onclick="openModal()">
     <i class='bx bxs-user'></i>
   </a>
 </div>
@@ -91,7 +91,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- modal Structure -->
 {% include "components/modal.html"%}
