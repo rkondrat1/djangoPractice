@@ -9,8 +9,9 @@ class Establishment(models.Model):
     address = models.CharField(max_length=300)
     zipcode = models.CharField(max_length=5)
     establishment_hours = models.CharField(max_length=12)
-    website = models.URLField()
-    location = LocationField(default=[0.0, 0.0])
+    website = models.CharField(max_length=300)
+    #location = LocationField(default=[0.0, 0.0])
+    location = models.CharField(max_length=30)
     
     def __str__(self):
         return self.name  

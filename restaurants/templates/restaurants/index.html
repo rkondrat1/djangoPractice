@@ -27,18 +27,9 @@
   <div class="select-box">
     <div class="selected">Neighborhood</div>
     <div class="options-container">
-      <div class="option">Lower East Side</div>
-      <div class="option">Midtown</div>
-      <div class="option">East Village</div>
-      <div class="option">Hells Kitchen</div>
-      <div class="option">Fidi</div>
-      <div class="option">West Village</div>
-      <div class="option">Bed-Stuy</div>
-      <div class="option">Crowne Heights</div>
-      <div class="option">Clinton Hill</div>
-      <div class="option">Clinton Hill</div>
-      <div class="option">Park Slope</div>
-      <div class="option">Williamsburg</div>
+    {% for x in location %}
+      <div class="option">{{ x.location }}</div>
+    {% endfor %}
     </div>
   </div>
 
