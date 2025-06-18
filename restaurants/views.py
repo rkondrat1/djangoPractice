@@ -3,18 +3,19 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
+from .models import Establishment
+from .models import Deals
 
 def index(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    all_deals = Deals.objects.all()
+    deal_start_time = sorted(set(all_deals)) 
+    deal_end_time = sorted(set(all_deals)) 
+    deal_day_of_week = sorted(set(all_deals)) 
+    deal_type = sorted(set(all_deals)) 
 
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            auth_login(request, user)
-            return redirect('restaurants')  
-        else:
-            return render(request, 'restaurants/index.html', {
-                'error': 'Invalid username or password'
-            })
-    return render(request, 'restaurants/index.html')
+    return render(request, 'restaurants/index.html', {
+        'deal_start_time': deal_start_time,
+        'deal_end_time': deal_end_time,
+        'deal_day_of_week': deal_day_of_week,
+        'deal_type': deal_type,
+    })
