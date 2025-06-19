@@ -24,15 +24,4 @@ def index(request):
         'deal_type': deal_type,
         'location' : location,
     })
-
-def load_modal_content(request):
-    form_type = request.GET.get('type')  # "login" or "signup"
-    if form_type == "login":
-        html = render_to_string("users/login.html", {}, request)
-    elif form_type == "signup":
-        html = render_to_string("users/signup.html", {}, request)
-    else:
-        html = "<p>Error: Unknown modal type</p>"
-
-    return JsonResponse({'html': html})
     
