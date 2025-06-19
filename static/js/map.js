@@ -50,14 +50,45 @@ document.addEventListener('click', e => {
 });
 
   /* ========================================
-    Modal Open + Close Functionality
+    Modal Close Functionality
 ======================================== */
 
-  // open modal , has to be outside of DOMContentLoaded
-  function openModal() {
-    document.getElementById("myModal").style.display = "block";
-  };
-  // close modal , has to be outside of DOMContentLoaded
-  function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-  };
+function closeModal() {
+  const modal = document.getElementById("user-modal");
+  const content = document.getElementById("modal-content");
+
+  if (modal) modal.style.display = "none";
+  if (content) content.innerHTML = '';
+}
+
+  /* ========================================
+    Dynamically Change Modal Content
+    - login.html
+    - signup.html
+======================================== */
+
+function siwtchToLogin() {
+  const modal = document.getElementById("user-modal");
+  const content = document.getElementById("modal-content");
+  const loginTemplate = document.getElementById("login-template");
+
+  if (loginTemplate && content) {
+    content.innerHTML = `
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      ${loginTemplate.innerHTML}
+    `;
+    modal.style.display = "block";
+  }
+}
+
+function switchToSignup() {
+  const content = document.getElementById("modal-content");
+  const signupTemplate = document.getElementById("signup-template");
+
+  if (signupTemplate && content) {
+    content.innerHTML = `
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      ${signupTemplate.innerHTML}
+    `;
+  }
+}

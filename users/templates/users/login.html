@@ -6,7 +6,7 @@
 
 <form method="post" action="{% url 'index' %}">
   {% csrf_token %}
-  <div class="login-wrapper">
+  <div class="user-profile-wrapper">
   <h1>Login</h1>
   <div class="input-box">
     <input type="text" name="username" placeholder="Username" required>
@@ -24,7 +24,7 @@
 
   <button type="submit" class="btn">Login</button>
   <div class="register-link">
-    <p>Don’t have an account? <a href="#" onclick="loadModalContent('signup')">Register here</a></p>
+    <p>Don’t have an account? <a href="#" onclick="switchToSignup()">Register here</a></p>
   </div>
   </div>
 
