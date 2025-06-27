@@ -248,11 +248,10 @@ body {
    templates/components/modal.html
    - login modal content
    - signup modal content
+   - add deals
 ======================================== */
 
 .user-profile-wrapper {
-    max-height: 550px;
-    max-width: 550px;
     z-index: 2000;
 }
 
@@ -263,8 +262,8 @@ body {
 }
 
 .user-profile-wrapper .input-box{
-    position: relative;
-    width: 100%;
+    position: sticky;
+    width: 90%;
     z-index: 2000;
     height: 50px;
     margin: 30px 25px;
@@ -320,7 +319,7 @@ body {
 }
 
 .user-profile-wrapper .btn {
-    width: 100%;
+    width: 90%;
     height: 45px;
     background: #ffff;
     border: none;
@@ -352,6 +351,47 @@ body {
 }
 
 /* ========================================
-   templates/components/add_deal_modal.html
-   - model stucture for add deals form
+   templates/components/establishment_deal.html
+   - resturant info
 ======================================== */
+
+  /* add deal icon */
+.establishment-container {
+  position: absolute;
+  bottom: 200px;
+  left: 60px;
+  z-index: 809;
+}
+
+.establishment-container .establishment-icon {
+    background-color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+  }
+  
+.establishment-icon:hover {
+    background-color: #f3f3f3;
+    transform: scale(1.05);
+  }
+
+.establishment-icon i {
+    font-size: 36px;
+    color: #333;
+  }
+
+  .establishment-profile-wrapper {
+
+  }
+   .establishment-profile-wrapper h1{
+    text-align: center;
+   }
