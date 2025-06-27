@@ -49,46 +49,39 @@ document.addEventListener('click', e => {
 });
 });
 
-  /* ========================================
-    Modal Close Functionality
-======================================== */
-
-function closeModal() {
-  const modal = document.getElementById("user-modal");
-  const content = document.getElementById("modal-content");
-
-  if (modal) modal.style.display = "none";
-  if (content) content.innerHTML = '';
-}
 
   /* ========================================
     Dynamically Change Modal Content
     - login.html
     - signup.html
+    - add_deal_modal.html
 ======================================== */
 
-function siwtchToLogin() {
+  /* ========================================
+    Modal Close Functionality
+======================================== */
+function openModal(templateId) {
+  console.log("openModal called with:", templateId); // Add this
   const modal = document.getElementById("user-modal");
-  const content = document.getElementById("modal-content");
-  const loginTemplate = document.getElementById("login-template");
+  const body = document.getElementById("modal-body");
+  const template = document.getElementById(templateId);
 
-  if (loginTemplate && content) {
-    content.innerHTML = `
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      ${loginTemplate.innerHTML}
+    if (template && body) {
+    body.innerHTML = `
+      ${template.innerHTML}
     `;
     modal.style.display = "block";
-  }
-}
+    console.log("openModal called with, end of code", templateId); // Add this
 
-function switchToSignup() {
-  const content = document.getElementById("modal-content");
-  const signupTemplate = document.getElementById("signup-template");
+} }
 
-  if (signupTemplate && content) {
-    content.innerHTML = `
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      ${signupTemplate.innerHTML}
-    `;
-  }
+function closeModal() {
+  console.log("close modal called "); // Add this
+  const modal = document.getElementById("user-modal");
+  const body = document.getElementById("modal-body");
+
+  if (modal) modal.style.display = "none";
+  if (body) body.innerHTML = '';
+  console.log("end of close modal"); // Add this
+
 }

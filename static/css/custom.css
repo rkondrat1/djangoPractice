@@ -14,6 +14,7 @@ body {
    - title bar
    - login icon
    - filter drop down menu
+   - add deal icon
 ======================================== */
   
 /* map */
@@ -161,6 +162,41 @@ body {
     background-color: #f3f3f3;
   }
 
+  /* add deal icon */
+.add-deal-container {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  z-index: 809;
+}
+
+.add-deal-container .add-deal-icon {
+    background-color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+  }
+  
+.add-deal-icon:hover {
+    background-color: #f3f3f3;
+    transform: scale(1.05);
+  }
+
+.add-deal-icon i {
+    font-size: 36px;
+    color: #333;
+  }
+
+
 /* ========================================
    templates/components/modal.html
    - basic model stucture
@@ -185,9 +221,9 @@ body {
     border: 1px solid #888;
     border-radius: 10px;
     width: 90%;
-    height: 90%;
-    max-height: 600px;
+    max-height: 900px;
     max-width: 600px;
+    overflow-y: auto;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -196,11 +232,11 @@ body {
   
   .close-modal {
     color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+    position: sticky;
     font-size: 28px;
     font-weight: bold;
+    bottom: 95%;
+    left: 95%;
     cursor: pointer;
   }
   
@@ -314,3 +350,8 @@ body {
 .register-link p a:hover{
     text-decoration: underline;
 }
+
+/* ========================================
+   templates/components/add_deal_modal.html
+   - model stucture for add deals form
+======================================== */

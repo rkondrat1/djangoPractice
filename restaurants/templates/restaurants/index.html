@@ -15,7 +15,7 @@
 
 <!-- login icon - onlick open up modal-->
 <div class="login-container">
-  <a class="login-icon" onclick="siwtchToLogin()">
+  <a class="login-icon" onclick="openModal('login-template')">
     <i class='bx bx-user' ></i>
   </a>
 </div>
@@ -74,12 +74,15 @@
   </div>
 </div>
 
+<!-- add restaurants icon-->
+<div class="add-deal-container">
+  <a class="add-deal-icon" onclick="openModal('add-deal-template')">
+    <i class='bx bx-plus'></i> 
+  </a>
+</div>
+
 <!-- modal Structure -->
 {% include "components/modal.html"%}
-
-<div id="loginModal" class="modal-overlay">
-
-</div>
 
 {% endblock %}
 

@@ -1,0 +1,47 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+<form method="post" action="{% url 'index' %}">
+  {% csrf_token %}
+  <div class="user-profile-wrapper">
+  <h1>Add Happy Hour Deal</h1>
+<div class="input-box">
+    <input type="text" name="name" placeholder="Establishment Name" required>
+    <i class='bx bxs-lock-alt'></i>
+  </div>
+<div class="input-box">
+    <input type="text" name="establishment_info" placeholder="Establishment Website or @" required>
+    <i class='bx bxs-lock-alt'></i>
+  </div>
+<div class="input-box">
+    <input type="text" name="location" placeholder="Location" required>
+    <i class='bx bxs-lock-alt'></i>
+  </div>
+  <div class="input-box">
+    <input type="text" name="deal_start_time" placeholder="Start Time" required>
+    <i class='bx bxs-user'></i>
+  </div>
+  <div class="input-box">
+    <input type="text" name="deal_end_time" placeholder="End Time" required>
+    <i class='bx bxs-lock-alt'></i>
+  </div>
+<div class="input-box">
+    <input type="text" name="deal_day_of_week" placeholder="Day(s) of Week" required>
+    <i class='bx bxs-lock-alt'></i>
+</div>  
+<div class="input-box">
+    <input type="text" name="deal_type" placeholder="Deal Type" required>
+    <i class='bx bxs-lock-alt'></i>
+</div>
+<div class="input-box">
+    <input type="text" name="deal_details" placeholder="Details" required>
+    <i class='bx bxs-lock-alt'></i>
+</div>
+
+  <button type="submit" class="btn">Submit</button>
+</div>
+
+</form>
