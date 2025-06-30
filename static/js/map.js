@@ -57,9 +57,6 @@ document.addEventListener('click', e => {
     - add_deal_modal.html
 ======================================== */
 
-  /* ========================================
-    Modal Close Functionality
-======================================== */
 function openModal(templateId) {
   console.log("openModal called with:", templateId); // Add this
   const modal = document.getElementById("user-modal");
@@ -74,7 +71,9 @@ function openModal(templateId) {
     console.log("openModal called with, end of code", templateId); // Add this
 
 } }
-
+  /* ========================================
+    Modal Close Functionality
+======================================== */
 function closeModal() {
   console.log("close modal called "); // Add this
   const modal = document.getElementById("user-modal");
@@ -85,3 +84,54 @@ function closeModal() {
   console.log("end of close modal"); // Add this
 
 }
+
+  /* ========================================
+    Establishment Deals Dynamic Updates
+    - establishment_deal.html
+======================================== */
+const dealsByDay = {
+  Monday: {
+    address: "BED STUY",
+    details: "2-for-1 Margaritas 5-7pm",
+    website: "https://www.instagram.com/bushwicktacocompany/?hl=en"
+  },
+  Tuesday: {
+    address: "LES",
+    details: "yum",
+    website: "https://www.instagram.com/lego/"
+  },
+  Wednesday: {
+    address: "green point",
+    details: "tacos omfofmfo wifjewijf ewoijf weoifjweoif jweoi j wefijewofijewfojewfoiwejfoi wejofij ew iofewj fiojfoweifjweoifj",
+    website: "https://www.instagram.com/taylorfrankiepaul/?hl=en"
+  }
+};
+
+function updateDeal(day) {
+  const deal = dealsByDay[day];
+  if (deal) {
+    document.getElementById("address").textContent = deal.address;
+    document.getElementById("details").textContent = deal.details;
+
+    const username = extractInstagramUsername(deal.website);
+    const websiteEl = document.getElementById("website");
+    websiteEl.href = deal.website;
+    websiteEl.textContent = username || deal.website;
+  }
+}
+
+
+function extractInstagramUsername(url) {
+  try {
+    const parsedUrl = new URL(url);
+    const pathname = parsedUrl.pathname; // e.g. "/bushwicktacocompany/"
+    const segments = pathname.split('/').filter(Boolean); // removes empty strings
+    if (segments.length > 0) {
+      return "@" + segments[0];
+    }
+  } catch (e) {
+    console.error("Invalid URL", e);
+  }
+  return null;
+}
+
