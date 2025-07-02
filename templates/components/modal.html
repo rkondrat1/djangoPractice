@@ -1,0 +1,15 @@
+<div id="user-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-content" id="modal-content">
+    <!-- dynamic content here -->
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+  </div>
+</div>
+
+<!-- Modal Templates -->
+<template id="login-template">
+  {% include "users/login.html" %}
+</template>
+
+<template id="signup-template">
+  {% include "users/signup.html" %}
+</template>

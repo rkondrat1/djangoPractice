@@ -1,25 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RHHS</title>
-    {% load static %}
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- Mapbox JS-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <!-- Mapbox CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
-        <h1>RHHS</h1>
-        <nav>
-            <a href="/">Home</a>
-        </nav>
+        <!-- Navigation or logo -->
     </header>
 
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+
+        {% endblock %}
     </main>
 
     <footer>
-        <p> 2025 My Site</p>
+        <!-- Footer content -->
     </footer>
+  {% block scripts %}{% endblock %}
 </body>
 </html>
