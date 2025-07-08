@@ -14,6 +14,7 @@ body {
    - title bar
    - login icon
    - filter drop down menu
+   - add deal icon
 ======================================== */
   
 /* map */
@@ -161,6 +162,41 @@ body {
     background-color: #f3f3f3;
   }
 
+  /* add deal icon */
+.add-deal-container {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  z-index: 809;
+}
+
+.add-deal-container .add-deal-icon {
+    background-color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+  }
+  
+.add-deal-icon:hover {
+    background-color: #f3f3f3;
+    transform: scale(1.05);
+  }
+
+.add-deal-icon i {
+    font-size: 36px;
+    color: #333;
+  }
+
+
 /* ========================================
    templates/components/modal.html
    - basic model stucture
@@ -185,9 +221,9 @@ body {
     border: 1px solid #888;
     border-radius: 10px;
     width: 90%;
-    height: 90%;
-    max-height: 600px;
+    max-height: 900px;
     max-width: 600px;
+    overflow-y: auto;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -196,11 +232,11 @@ body {
   
   .close-modal {
     color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+    position: sticky;
     font-size: 28px;
     font-weight: bold;
+    bottom: 95%;
+    left: 95%;
     cursor: pointer;
   }
   
@@ -212,11 +248,10 @@ body {
    templates/components/modal.html
    - login modal content
    - signup modal content
+   - add deals
 ======================================== */
 
 .user-profile-wrapper {
-    max-height: 550px;
-    max-width: 550px;
     z-index: 2000;
 }
 
@@ -227,8 +262,8 @@ body {
 }
 
 .user-profile-wrapper .input-box{
-    position: relative;
-    width: 100%;
+    position: sticky;
+    width: 90%;
     z-index: 2000;
     height: 50px;
     margin: 30px 25px;
@@ -284,7 +319,7 @@ body {
 }
 
 .user-profile-wrapper .btn {
-    width: 100%;
+    width: 90%;
     height: 45px;
     background: #ffff;
     border: none;
@@ -314,3 +349,136 @@ body {
 .register-link p a:hover{
     text-decoration: underline;
 }
+
+/* ========================================
+   templates/components/establishment_deal.html + index.html
+   - resturant info
+   - each of the deals
+======================================== */
+
+  /* add deal icon */
+.establishment-container {
+  position: absolute;
+  bottom: 200px;
+  left: 60px;
+  z-index: 809;
+}
+
+.establishment-container .establishment-icon {
+    background-color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+  }
+  
+.establishment-icon:hover {
+    background-color: #f3f3f3;
+    transform: scale(1.05);
+  }
+
+.establishment-icon i {
+    font-size: 36px;
+    color: #333;
+  }
+
+   .establishment-profile-wrapper h1{
+    text-align: center;
+   }
+    .establishment-profile-wrapper h3{
+    text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+   }
+
+    .DOW-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .day-button {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .day-button:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-1px);
+    }
+
+    .info-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    .info-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+
+
+    .info-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+    }
+
+    .deal-details {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #website {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    #website:hover {
+      text-decoration: underline;
+    }

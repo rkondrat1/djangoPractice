@@ -1,6 +1,9 @@
 <div id="user-modal" class="modal-overlay" style="display:none;">
-  <div class="modal-content" id="modal-content">
-    <!-- dynamic content here -->
+  <div class="modal-content">
+    <div id="modal-body">
+      <!-- Dynamic template content goes here -->
+
+    </div>
     <span class="close-modal" onclick="closeModal()">&times;</span>
   </div>
 </div>
@@ -12,4 +15,11 @@
 
 <template id="signup-template">
   {% include "users/signup.html" %}
+</template>
+
+<template id="add-deal-template">
+  {% include "restaurants/add_deal.html" %}
+</template>
+<template id="establishment-template">
+  {% include "restaurants/establishment_deal.html" %}
 </template>

@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     style: 'mapbox://styles/mapbox/streets-v11',
     center: coordinates,
     zoom: 10
-  });
+  }); //end const map
 
   /* ========================================
     Option Drop Down Functionality
 ======================================== */
 const selectBoxes = document.querySelectorAll('.select-box'); //CSS class
+
 selectBoxes.forEach(box => {
   const selected = box.querySelector('.selected'); //CSS class
   const optionsContainer = box.querySelector('.options-container'); //CSS class
@@ -28,7 +29,7 @@ selectBoxes.forEach(box => {
       if (container !== optionsContainer) container.classList.remove('active');
     });
     optionsContainer.classList.toggle('active');
-  });
+  }); //END selectBoxes.forEach
 
   // When an option is clicked, update selected text
   options.forEach(option => {
@@ -37,8 +38,8 @@ selectBoxes.forEach(box => {
       optionsContainer.classList.remove('active');
       console.log(`Selected: ${option.textContent}`);
     });
-  });
-});
+  }); // END options.forEach
+});//END selectBoxes
 
 document.addEventListener('click', e => {
   if (!e.target.closest('.select-box')) {
@@ -46,49 +47,64 @@ document.addEventListener('click', e => {
       container.classList.remove('active');
     });
   }
-});
-});
-
-  /* ========================================
-    Modal Close Functionality
-======================================== */
-
-function closeModal() {
-  const modal = document.getElementById("user-modal");
-  const content = document.getElementById("modal-content");
-
-  if (modal) modal.style.display = "none";
-  if (content) content.innerHTML = '';
-}
+});// end 'click'
+}); // end 'DOMContentLoaded' 
 
   /* ========================================
     Dynamically Change Modal Content
     - login.html
     - signup.html
+    - add_deal_modal.html
 ======================================== */
 
-function siwtchToLogin() {
+function openModal(templateId) {
+  console.log("openModal called with:", templateId); 
   const modal = document.getElementById("user-modal");
-  const content = document.getElementById("modal-content");
-  const loginTemplate = document.getElementById("login-template");
+  const body = document.getElementById("modal-body");
+  const template = document.getElementById(templateId);
 
-  if (loginTemplate && content) {
-    content.innerHTML = `
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      ${loginTemplate.innerHTML}
+    if (template && body) {
+    body.innerHTML = `
+      ${template.innerHTML}
     `;
     modal.style.display = "block";
-  }
+    console.log("openModal called with, end of code", templateId); 
+
+} }
+  /* ========================================
+    Modal Close Functionality
+======================================== */
+function closeModal() {
+  console.log("close modal called "); 
+  const modal = document.getElementById("user-modal");
+  const body = document.getElementById("modal-body");
+
+  if (modal) modal.style.display = "none";
+  if (body) body.innerHTML = '';
+  console.log("end of close modal"); 
+
 }
 
-function switchToSignup() {
-  const content = document.getElementById("modal-content");
-  const signupTemplate = document.getElementById("signup-template");
-
-  if (signupTemplate && content) {
-    content.innerHTML = `
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      ${signupTemplate.innerHTML}
-    `;
-  }
+  /* ========================================
+    Establishment Deals Dynamic Updates
+    - establishment_deal.html
+    - will fill this in after db fill
+======================================== */
+function updateDeal(day) {
+  
 }
+
+function extractInstagramUsername(url) {
+  try {
+    const parsedUrl = new URL(url);
+    const pathname = parsedUrl.pathname; // e.g. "/bushwicktacocompany/"
+    const segments = pathname.split('/').filter(Boolean); // removes empty strings
+    if (segments.length > 0) {
+      return "@" + segments[0];
+    }
+  } catch (e) {
+    console.error("Invalid URL", e);
+  }
+  return null;
+}
+

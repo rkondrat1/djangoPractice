@@ -25,3 +25,23 @@ def index(request):
         'location' : location,
     })
     
+# def add_deal_view(request):
+#     if request.method == 'POST':
+#         name = request.POST.get("location")
+#         establishment_info = request.POST.get("establishment_info")
+#         location = request.POST.get("location")
+#         deal_start_time = request.POST.get("deal_start_time")
+#         deal_end_time = request.POST.get("deal_end_time")
+#         deal_day_of_week = request.POST.get("deal_day_of_week")
+#         deal_type = request.POST.get("deal_type")
+#         deal_details = request.POST.get("deal_details")
+#         
+#     return render(request, 'restaurants/add_deal.html')
+
+# def establishment_deal_view(request):
+#     establishments = Establishment.objects.all()
+#     deals = Deals.objects.select_related('establishment').all()
+#     return render(request, 'establishment_deal.html', {
+#         'establishments': establishments,
+#         'deals': deals,
+#     })

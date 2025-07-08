@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <div class="establishment-profile-wrapper">
+  <h1>Establishment Name</h1>
+  <div id="address" class="info-value">
+    <h3>Address</h3>
+    <h4>Website</h4>
+  </div>
+
+  <div class="info-value">
+      <a id="website" href="#" target="_blank"></a>
+  </div>
+  </div>
+
+  <div class ="DOW-btn-group">
+    <button class="day-button" onclick="updateDeal('Monday')">M</button>
+    <button class="day-button" onclick="updateDeal('Tuesday')">T</button>
+    <button class="day-button" onclick="updateDeal('Wednesday')">W</button>
+    <button class="day-button" onclick="updateDeal('Thursday')">TH</button>
+    <button class="day-button" onclick="updateDeal('Friday')">F</button>
+    <button class="day-button" onclick="updateDeal('Saturday')">S</button>
+    <button class="day-button" onclick="updateDeal('Sunday')">S</button>
+  </div>
+
+  <div class="info-title">
+    Click a day to view the deal
+  </div>
+
+
+  <div class="info-box">
+    <div class="info-title">Deal Details</div>
+    <div id="details" class="deal-details">
+    </div>
+  </div>
