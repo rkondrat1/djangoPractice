@@ -23,8 +23,9 @@ class Deals(models.Model):
     deal_day_of_week = models.CharField(max_length=10)
     deal_type = models.CharField(max_length=20)
     deal_details = models.CharField(max_length=300)
+    
     #Deal relation to restaurant
-    #establishment = models.ForeignKey(Establishment, on_delete=models.CASCADE, related_name='Deals', default=1)
+    establishment = models.ForeignKey(Establishment, on_delete=models.CASCADE, related_name='Deals', default=1)
 
     def __str__(self):
         return f"{self.deal_type} on {self.deal_day_of_week}"

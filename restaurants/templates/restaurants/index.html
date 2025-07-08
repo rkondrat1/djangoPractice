@@ -27,9 +27,9 @@
   <div class="select-box">
     <div class="selected">Neighborhood</div>
     <div class="options-container">
-    {% for x in location %}
-      <div class="option">{{ x.location }}</div>
-    {% endfor %}
+      {% for x in location %}
+        <div class="option">{{ x.location }}</div>
+      {% endfor %}  
     </div>
   </div>
 
@@ -37,9 +37,9 @@
   <div class="select-box">
     <div class="selected">Start Time</div>
     <div class="options-container">
-    {% for deal in deal_start_time %}
-      <div class="option">{{ deal.deal_start_time }}</div>
-    {% endfor %}
+      {% for deal in deal_start_time %}
+        <div class="option">{{ deal.deal_start_time }}</div>
+      {% endfor %}
     </div>
   </div>
 
@@ -47,9 +47,9 @@
   <div class="select-box">
     <div class="selected">Deal End Time</div>
     <div class="options-container">
-    {% for deal in deal_end_time %}
-      <div class="option">{{ deal.deal_end_time }}</div>
-    {% endfor %}
+      {% for deal in deal_end_time %}
+        <div class="option">{{ deal.deal_end_time }}</div>
+      {% endfor %}
     </div>
   </div>
 
@@ -57,9 +57,9 @@
   <div class="select-box">
     <div class="selected">Day of Week</div>
     <div class="options-container">
-     {% for day in deal_day_of_week %}
-      <div class="option">{{ day.deal_day_of_week}}</div>
-    {% endfor %}
+      {% for day in deal_day_of_week %}
+        <div class="option">{{ day.deal_day_of_week}}</div>
+      {% endfor %}
     </div>
   </div>
 
